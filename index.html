@@ -35,6 +35,83 @@
 				<!-- Section -->
 				<section id="first">
 					<header>
+						<h2>05/06/2020</h2>
+						<h3>Creating more enemies!</h3>
+					</header>
+					<div class="content">
+						<p><strong>Game Plan: </strong>Create more enemies (apart from slug) and make sure they all work. Create waves for the game, each with increasing difficulty. Set up money earning and spending.</p>
+						<h3>The enemies:</h3>
+						<ul>
+							<li><strong>Slug - </strong>slow speed, low health</li>
+							<li><strong>Rat - </strong>fast, medium health</li>
+							<li><strong>Turtle - </strong>extra slow, very high health</li>
+							<li><strong>Wolf - </strong>very fast, high health</li>
+							<li>more to come</li>
+						</ul>
+						<p>Spending and earning was set up and is proportional to game difficulty.</p>
+						<h3>Next Steps</h3>
+						<ol>
+							<li>Finish setting up waves</li>
+							<li>Add weapon selling (maybe)</li>
+							<li>Set up "You win/lose"</li>
+						</ol>
+					</div>
+				</section>
+				<section id="first">
+					<header>
+						<h2>03/06/2020</h2>
+						<h3>Creating more weapons!</h3>
+					</header>
+					<div class="content">
+						<p><strong>Game Plan: </strong>Make new weapons and their images and edit the code to allow for this. Set up buttons on game screen to purchase different weapons.</p>
+						<h3>The weapons:</h3>
+						<ul>
+							<li><strong>Basic - </strong>medium range, medium shooting speed, light damage</li>
+							<li><strong>Long - </strong>long range, fast shooting speed, extra light damage</li>
+							<li><strong>Multi - </strong>small range, slow shooting speed, high damage, shoots in 4 directions</li>
+							<li><strong>Heavy - </strong>long range, extra slow shooting speed, medium damage, can hit multiple enemies</li>
+							<li><strong>Small - </strong>small range, extra fast shooting speed, medium damage</li>
+						</ul>
+						<h3>Difficulties faced</h3>
+						<p>Setting up fields and shooting for the multi weapon required a few modifications to the code because there were more than one of each for the weapon.</p>
+						<p>Fixed players being able to place their weapon with a small overlap on the path. Fixed players not being able to place their weapon in certain areas (numbers problem).</p>
+						<p>New problem: because of the long fields for some weapons there is a small visual problem in placing weapons near the top. The only way to fix this is to limit the player placing their weapon there but it is a good shooting spot so it will be kept.</p>
+						<h3>Next Steps</h3>
+						<ol>
+							<li>Create different enemies</li>
+							<li>Set up enemy waves</li>
+							<li>Set up money</li>
+						</ol>
+					</div>
+				</section>
+				<section id="first">
+					<header>
+						<h2>01/06/2020</h2>
+						<h3>Setting up shooting!</h3>
+					</header>
+					<div class="content">
+						<p><strong>Game Plan: </strong>Get the bullets positioned properly to align with the weapon image and move in the right direction from there. Set up IsTouching for Bullet x Enemy.</p>
+						<h3>How shooting works:</h3>
+						<ul>
+							<li>Each tick of the timer a foreach loop checks if the internal counter for shooting for each weapon is ready to shoot.</li>
+							<li>If ready, depending on the type of weapon it creates a bullet.</li>
+							<li>Bullets are given the X/Y positions of the weapon, the speed of the bullet, the damage it does, the angle the weapon is at (rotation), how long the range is, and true/false for the bullet size (true = big bullet).</li>
+							<li>In the bullet class the bullet position is set up depending on the angle (so it shoots from the right side and right spot), and the bullet is created.</li>
+							<li>*Then a foreach loop checks if the bullet is still in it's range and moves it in the correct direction, if the bullet is outside of it's range it deletes itself.</li>
+							<li>Then it is checked if the bullet is still on the screen, if not, it deletes itself.</li>
+							<li>Bullet x Enemy IsTouching is checked, if true, they are both deleted (big bullets are not deleted).</li>
+							<li>From here the loop restarts, if a bullet is already made, it's code to move starts at the *.</li>
+						</ul>
+						<h3>Next Steps</h3>
+						<ol>
+							<li>Create different weapons</li>
+							<li>Create different enemies</li>
+							<li>Set up enemy waves</li>
+						</ol>
+					</div>
+				</section>
+				<section id="first">
+					<header>
 						<h2>27/05/2020</h2>
 						<h3>Creating the Bullet class!</h3>
 					</header>
