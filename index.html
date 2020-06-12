@@ -35,6 +35,47 @@
 				<!-- Section -->
 				<section id="first">
 					<header>
+						<h2>11/06/2020</h2>
+						<h3>Setting up You Win/Lose!</h3>
+					</header>
+					<div class="content">
+						<p><strong>Game Plan: </strong>Set up two endings, player wins (all 10 waves defeated), player loses (castle health <= 0).</p>
+						<h3>You win!</h3>
+						<p>After all enemies have been sent, wave10 is set to true. Then every tick of the timer it is checked if wave10 == true & there are 0 enemies in the game (all defeated).</p>
+						<h3>You lose!</h3>
+						<p>If castleHealth <= 0, YouLose().</p>
+						<h3>Next Steps</h3>
+						<ol>
+							<li>Submit the game!</li>
+						</ol>
+					</div>
+				</section>
+				<section id="first">
+					<header>
+						<h2>09/06/2020</h2>
+						<h3>Setting up weapon selling!</h3>
+					</header>
+					<div class="content">
+						<p><strong>Game Plan: </strong>Finish all 10 waves and set up weapon selling.</p>
+						<h3>How Weapon Selling Works:</h3>
+						<ul>
+							<li>Player clicks "Sell Weapon" button.</li>
+							<li>Player is told how to sell weapon (click on it), given the option to cancel.</li>
+							<li>When the player clicks, sellingWeapon is checked (true if sell button was clicked).</li>
+							<li>If true, a foreach loop runs through the weapons checking if the clicked element is that weapon.</li>
+							<li>If it is that weapon, it is sold, the loop breaks, and sellingWeapon is set to false.</li>
+						</ul>
+						<p>The Bear enemy was added: medium speed, very high health.</p>
+						<h3>Issues Encountered</h3>
+						<p>Weapon selling is different from weapon placing because it matters what object you click on and which one it is. Weapon placing did not matter where you clicked because it used IsTouching, while this cycles through all weapons to figure out which one it is, took a bit of figuring out.</p>
+						<h3>Next Steps</h3>
+						<ol>
+							<li>Set up "You win/lose"</li>
+						</ol>
+					</div>
+				</section>
+				<section id="first">
+					<header>
 						<h2>05/06/2020</h2>
 						<h3>Creating more enemies!</h3>
 					</header>
