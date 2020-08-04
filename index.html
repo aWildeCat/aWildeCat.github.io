@@ -1,592 +1,137 @@
-<!DOCTYPE HTML>
-<!--
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Developer Log</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!doctype html>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<html lang="en">
+    
+    <head>
+      
+        <meta charset="utf-8">
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-				<!-- Intro -->
-					<section class="intro">
-						<header>
-							<h1>Developer Log</h1>
-							<p>Keeping track of my game development! </p>
-							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
-						</header>
-						<div class="content">
-							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span>
-						</div>
-					</section>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+        <script src="https://kit.fontawesome.com/836718921f.js" crossorigin="anonymous"></script>
+        
+        <title>Portfolio!</title>
+        
+        <style type="text/css">
+            .jumbotron {
+                background-image: url(images/background.jpg);
+                text-align: center;
+                margin: 0px;
+                padding: 175px 0px 175px 0px;
+                margin-bottom: 60px;
+                border-radius: 0%;
+            }
+            .navbar {
+                padding: 20px;
+            }
+            .center-text {
+                text-align: center;
+            }
+            #firstRow {
+                margin-bottom: 25px;
+            }
+            .size {
+                height: 56px;
+            }
+            #bottomTron {
+                margin: 80px 0px 0px 0px !important;
+            }
+            #devLogButton {
+                text-decoration: none;
+                color:white;
+            }
+            #devLogButton:hover {
+                text-decoration: none !important;
+            }
+            .nav-link {
+                color: grey !important;
+                margin-top: 4px;
+            }
+            .nav-link.active {
+                background-color: rgb(78, 165, 187) !important;
+                color: white !important;
+                
+            }
+            .link-fix {
+                padding-top: 100px;
+                margin-top: -100px;
+            }
+        </style>
+      
+    </head>
 
-				<!-- Section -->
-				<section id="first">
-					<header>
-						<h2>11/06/2020</h2>
-						<h3>Setting up You Win/Lose!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Set up two endings, player wins (all 10 waves defeated), player loses (castle health <= 0).</p>
-						<h3>You win!</h3>
-						<p>After all enemies have been sent, wave10 is set to true. Then every tick of the timer it is checked if wave10 == true & there are 0 enemies in the game (all defeated).</p>
-						<h3>You lose!</h3>
-						<p>If castleHealth <= 0, YouLose().</p>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Submit the game!</li>
-						</ol>
-					</div>
-				</section>
-				<section id="first">
-					<header>
-						<h2>09/06/2020</h2>
-						<h3>Setting up weapon selling!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Finish all 10 waves and set up weapon selling.</p>
-						<h3>How Weapon Selling Works:</h3>
-						<ul>
-							<li>Player clicks "Sell Weapon" button.</li>
-							<li>Player is told how to sell weapon (click on it), given the option to cancel.</li>
-							<li>When the player clicks, sellingWeapon is checked (true if sell button was clicked).</li>
-							<li>If true, a foreach loop runs through the weapons checking if the clicked element is that weapon.</li>
-							<li>If it is that weapon, it is sold, the loop breaks, and sellingWeapon is set to false.</li>
-						</ul>
-						<p>The Bear enemy was added: medium speed, very high health.</p>
-						<h3>Issues Encountered</h3>
-						<p>Weapon selling is different from weapon placing because it matters what object you click on and which one it is. Weapon placing did not matter where you clicked because it used IsTouching, while this cycles through all weapons to figure out which one it is, took a bit of figuring out.</p>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Set up "You win/lose"</li>
-						</ol>
-					</div>
-				</section>
-				<section id="first">
-					<header>
-						<h2>05/06/2020</h2>
-						<h3>Creating more enemies!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Create more enemies (apart from slug) and make sure they all work. Create waves for the game, each with increasing difficulty. Set up money earning and spending.</p>
-						<h3>The enemies:</h3>
-						<ul>
-							<li><strong>Slug - </strong>slow speed, low health</li>
-							<li><strong>Rat - </strong>fast, medium health</li>
-							<li><strong>Turtle - </strong>extra slow, very high health</li>
-							<li><strong>Wolf - </strong>very fast, high health</li>
-							<li>more to come</li>
-						</ul>
-						<p>Spending and earning was set up and is proportional to game difficulty.</p>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Finish setting up waves</li>
-							<li>Add weapon selling (maybe)</li>
-							<li>Set up "You win/lose"</li>
-						</ol>
-					</div>
-				</section>
-				<section id="first">
-					<header>
-						<h2>03/06/2020</h2>
-						<h3>Creating more weapons!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Make new weapons and their images and edit the code to allow for this. Set up buttons on game screen to purchase different weapons.</p>
-						<h3>The weapons:</h3>
-						<ul>
-							<li><strong>Basic - </strong>medium range, medium shooting speed, light damage</li>
-							<li><strong>Long - </strong>long range, fast shooting speed, extra light damage</li>
-							<li><strong>Multi - </strong>small range, slow shooting speed, high damage, shoots in 4 directions</li>
-							<li><strong>Heavy - </strong>long range, extra slow shooting speed, medium damage, can hit multiple enemies</li>
-							<li><strong>Small - </strong>small range, extra fast shooting speed, medium damage</li>
-						</ul>
-						<h3>Difficulties faced</h3>
-						<p>Setting up fields and shooting for the multi weapon required a few modifications to the code because there were more than one of each for the weapon.</p>
-						<p>Fixed players being able to place their weapon with a small overlap on the path. Fixed players not being able to place their weapon in certain areas (numbers problem).</p>
-						<p>New problem: because of the long fields for some weapons there is a small visual problem in placing weapons near the top. The only way to fix this is to limit the player placing their weapon there but it is a good shooting spot so it will be kept.</p>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Create different enemies</li>
-							<li>Set up enemy waves</li>
-							<li>Set up money</li>
-						</ol>
-					</div>
-				</section>
-				<section id="first">
-					<header>
-						<h2>01/06/2020</h2>
-						<h3>Setting up shooting!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Get the bullets positioned properly to align with the weapon image and move in the right direction from there. Set up IsTouching for Bullet x Enemy.</p>
-						<h3>How shooting works:</h3>
-						<ul>
-							<li>Each tick of the timer a foreach loop checks if the internal counter for shooting for each weapon is ready to shoot.</li>
-							<li>If ready, depending on the type of weapon it creates a bullet.</li>
-							<li>Bullets are given the X/Y positions of the weapon, the speed of the bullet, the damage it does, the angle the weapon is at (rotation), how long the range is, and true/false for the bullet size (true = big bullet).</li>
-							<li>In the bullet class the bullet position is set up depending on the angle (so it shoots from the right side and right spot), and the bullet is created.</li>
-							<li>*Then a foreach loop checks if the bullet is still in it's range and moves it in the correct direction, if the bullet is outside of it's range it deletes itself.</li>
-							<li>Then it is checked if the bullet is still on the screen, if not, it deletes itself.</li>
-							<li>Bullet x Enemy IsTouching is checked, if true, they are both deleted (big bullets are not deleted).</li>
-							<li>From here the loop restarts, if a bullet is already made, it's code to move starts at the *.</li>
-						</ul>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Create different weapons</li>
-							<li>Create different enemies</li>
-							<li>Set up enemy waves</li>
-						</ol>
-					</div>
-				</section>
-				<section id="first">
-					<header>
-						<h2>27/05/2020</h2>
-						<h3>Creating the Bullet class!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Creating the Bullet class.</p>
-						<p>Only one update this week (sorry) because I had 40+ hours of work!</p>
-						<h3>Creating the Enemy Class:</h3>
-						<ul>
-							<li>public Bullet (used to set up bullet and set variables)</li>
-							<li>has the usual SetCoordinates, CreateBullet, GetBullet, GetX/Y</li>
-							<li>public MoveBullet (moves the bullet in a certain direction depending on the direction the weapon is facing</li>
-							<li>public IsTouching (checks if it is touching something, going to be used later for bullet x enemy)</li>
-							<li>public GetDamage (gets the amount of damage the bullet does to the enemy)</li>
-						</ul>
-						<h3>Copy-cat Class</h3>
-						<p>This class also uses very similar methods.</p>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Create Bullet image</li>
-							<li>Set up IsTouching between bullets and enemies</li>
-						</ol>
-					</div>
-				</section>
-				<section id="first">
-					<header>
-						<h2>22/05/2020</h2>
-						<h3>Creating the enemies!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Creating the enemy class making them follow the path. Also creating the player castle.</p>
-						<h3>Creating the Enemy Class:</h3>
-						<ul>
-							<li>public Enemy (used to set up enemy and set variables)</li>
-							<li>has the usual SetCoordinates, CreateEnemy, GetEnemy, GetX/Y</li>
-							<li>public MoveEnemy (moves the enemy in a certain direction depending on its coordinates (aka where it is on the path)</li>
-							<li>public IsTouching (checks if it is touching something, going to be used later for bullets)</li>
-							<li>public GetDamage (gets the amount of damage the enemy does to the castle)</li>
-						</ul>
-						<h3>Issues Encountered</h3>
-						<p>Had trouble figuring out the coordinates for MoveEnemy had to use a lot of greater/less than or equal to (to make sure enemy moved in the right direction at the right spot).</p>
-						<p>The enemies would not disappear when hitting the castle because the coordinates were off, was figured out and fixed.</p>
-						<h3>Copy-cat Class</h3>
-						<p>This class also uses very similar methods.</p>
-						<h3>The Path</h3>
-						<p>It would be nice to give the player options of what path to play with or have randomly generated paths but it would be complicated to have the enemies follow the path and would take a long time to set up which is why there is one path only.</p>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Set up Bullet class</li>
-							<li>Set up IsTouching between bullets and enemies</li>
-						</ol>
-						<h3>Game Update!</h3>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/KWQQxdmuwcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-				</section>
-				<section id="first">
-					<header>
-						<h2>19/05/2020</h2>
-						<h3>Creating the path!</h3>
-					</header>
-					<div class="content">
-						<p><strong>Game Plan: </strong>Creating the path and setting up IsTouching between the path and the weapon.</p>
-						<h3>Creating the Path Class:</h3>
-						<ul>
-							<li>public Path (used to set up the path, sets up variables)</li>
-							<li>private SetCoordinates (set the x and y coordinates for the object)</li>
-							<li>private CreatePath (create path block)</li>
-							<li>public IsTouching (checks to see if the weapon is overlapping the path when being placed</li>
-							<li>public GetPath (gets the rectangle)</li>
-							<li>public GetX/Y (get specific coordinate)</li>
-						</ul>
-						<h3>Issues Encountered</h3>
-						<p>Forgot how to use the x & y coordinates for the rectangle and had to use Canvas.SetTop/Left(object, position) in the main class until I figured it out.</p>
-						<h3>Copy-cat Class</h3>
-						<p>This class used all of the same methods as the Weapon class (aka no unique methods), the only difference is that the Weapon class has weapon-specific methods that the Path class does not use. I think there is something about parent classes and inheriting stuff from other classes but I don't know enough about this to implement it.</p>
-						<h3>Next Steps</h3>
-						<ol>
-							<li>Set up Enemy class</li>
-							<li>Make enemies follow the path</li>
-							<li>Create castle and add castle health</li>
-						</ol>
-					</div>
-				</section>
-					<section id="first">
-						<header>
-							<h2>18/05/2020</h2>
-							<h3>Finishing up weapons placing!</h3>
-						</header>
-						<div class="content">
-							<p><strong>Game Plan: </strong>Adding image for weapon, adding shooting range, and adding weapon rotation.</p>
-							<h3>Adding these to the Weapon Class:</h3>
-							<ul>
-								<li>private CreateField (used to create the shooting range)</li>
-								<li>public MoveField (used to move the field when placing depending on what position it is rotated in)</li>
-								<li>public RotateWeapon (rotate the weapon image)</li>
-								<li>public ChangePos (used to change the field position to match weapon, needed because just rotating the field did not position it properly)</li>
-							</ul>
-							<h3>Issues Encountered</h3>
-							<p>When setting up rotating the field would not rotate around the same axis as the weapon image so the position has to be changed. Once that was set up I realized that moving the weapon in the rotated position brought it right back to its previous position so MoveField had to be modified for each rotation.</p>
-							<h3>Next Steps</h3>
-							<ol>
-								<li>Set up Path class</li>
-								<li>Set up Enemy class</li>
-							</ol>
-						</div>
-					</section>
-					<section id="first">
-						<header>
-							<h2>14/05/2020</h2>
-							<h3>Setting up weapons placing!</h3>
-						</header>
-						<div class="content">
-							<p><strong>Game Plan: </strong>When the player buys a weapon they need to place it, but not on top of another object (aka another weapon or the path (to be implemented later).</p>
-							<h3>Adding these to the Weapon Class:</h3>
-							<ul>
-								<li>public MoveWeapon (used to place the weapon and follow mouse)</li>
-								<li>public IsTouching (check to make sure player does not place overlapping objects)</li>
-							</ul>
-							<h3>Creating placeWeaponTimer and bool placingWeapon:</h3>
-							<p>When a weapon is purchased the game is paused and the main timer is stopped. placeWeaponTimer starts and on every tick the position of the mouse is taken and given to the last weapon in the list so it follows the mouse around the screen (but stays in the canvas).</p>
-							<h3>Creating private void gamescreen_click</h3>
-							<p>When the screen is clicked first it is checked if placingWeapon is true. isTouching a new variable, is set to false. Then a foreach loops runs through all of the weapons in the list not including the newest one and checks if it is touching the one being placed using the IsTouching method. If it is touching then the loop breaks and the weapon is not placed. If the foreach loops runs through without returning true (aka is touching something) then the weapon is placed, the placeWeaponTimer is stopped, and the timer is started up again. </p>
-						</div>
-					</section>
+    <body data-spy="scroll" data-target="#navboi" data-offset="10">   
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top" id="navboi">
+            <div class="navbar-brand text-light" style="font-size: 24px;">Portfolio</div>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#the-nav" aria-controls="the-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="the-nav">
+              <ul class="nav navbar-nav nav-pills">
+                <li><a class="nav-item nav-link text-light" href="#aboutMe">About Me</a></li>
+                <li><a class="nav-item nav-link text-light" href="#progExp">Programming Experience</a></li>
+                <li><a class="nav-item nav-link text-light" href="#blogInfo">Game Dev Blog</a></li>
+              </ul>
+            </div>
+        </nav>
 
-					<section id="first">
-						<header>
-							<h2>12/05/2020</h2>
-							<h3>Starting the project!</h3>
-						</header>
-						<div class="content">
-							<p><strong>Game Plan: </strong>Making a tower defense-type game. The enemy will follow a premade path to the players base and come in waves. Survive all the waves to win! The player will purchase tanks/cannons (TBD) and earn money by destroying enemies. Some enemies are allowed to slip by, but watch out, your base only has a certain amount of health!</p>
-							<p><strong>Goals:</strong></p>
-							<ol>
-								<li>Set up the basics for the game screen</li>
-								<li>Create Weapon Class:</li>
-								<ul>
-									<li>public Weapon (used to create a weapon, sets variables)</li>
-									<li>private SetCoordinates (set x and y)</li>
-									<li>private CreateWeapon (make images and stuff)</li>
-									<li>public GetWeapon (get the rectangle/ellipse, likely with overrides if needed)</li>
-									<li>public GetX/GetY (get specific coordinate)</li>
-									<li>+ more if needed later</li>
-								</ul>
-								<li>Set up weapon purchasing (no money involved yet)</li>
-								<li>Create timer (no function yet)</li>
-							</ol>
-							<span class="image main"><img src="images/basicgamescreen.png" alt="" /></span> <!--will be an image of the screen-->
-						</div>
-					</section>
+        <div class="jumbotron justify-content-center">
+            <h1 class="display-4" style="font-size: 72px; color: white;">Alisa Ros</h1>
+            
+            <p class="lead" style="font-size: 24px; color: lightgrey;">A first year Carleton University student.</p>
+        </div>
+        <div class="container center-text">
+            <p class="lead link-fix" style="font-size: 32px;" id="aboutMe">About Me</p>
+            <hr>
+            <div class="row">
+                <img class="col-lg-4" src="images/ali.jpeg" alt="Alisa Ros" id="photo">
+                <p class="lead col-lg-8">Hi, I'm Alisa Ros.<br> <br>I'm a first year Computer Science student at Carleton University, and have a great interest in programming! Apart from my Computer Science major, I'm looking to get a minor in Statistics as well as Film Studies (if everything works out as planned!).<br><br>I currently work part-time at Starbucks which is helping fund my education, but I'm looking to get more involved in Computer Science-related opportunities to gain expereince and meet new people.<br><br>Outside of studying and work, I enjoy watching films, reading the occasional book, and spending time with my cat.</p>
+            </div>
+            <br>
+            <p class="lead link-fix" style="font-size: 32px;" id="progExp">Programming Experience</p>
+            <hr>
+            <div class="row" id="firstRow">
+                <p class="lead col-lg-6">I took programming classes all throughout high school and achieved top marks every year. My high school projects ranged from text-based adventure games, platformers, and object-oriented games. I am currently pursuing a degree in Computer Science at Carleton University. I am proficient in Python, and C#, with experience in using Java and Visual Studio.</p>
+                <div class="card col-lg-6 text-info border-info">
+                    <ul class="list-group list-group-flush center-text">
+                        <li class="list-group-item size">Python</li>
+                        <li class="list-group-item size">C#</li>
+                        <li class="list-group-item size">Visual Basic</li>
+                        <li class="list-group-item size">Java</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p class="lead col-lg-6">I am currently learning web development through The Complete Web Development Course 2.0 on Udemy. This includes guided coding (watching a video and following along), coding challenges (using what you learned to complete a small challenge), and final projects for each unit (creating a webpage with certain requirements). I created this page using the web development I have learned so far.</p>
 
-		
+                <div class="card col-lg-6 text-info border-info">
+                    <ul class="list-group list-group-flush center-text">
+                        <li class="list-group-item size">HTML 5</li>
+                        <li class="list-group-item size">CSS</li>
+                        <li class="list-group-item size">JavaScript/JQuery</li>
+                        <li class="list-group-item size">Bootstrap 5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron justify-content-center" id="bottomTron">
+            <h1 class="display-4" id="blogInfo" style="color: white;">Check this out!</h1>
+            <p class="lead" style="color: white;">The developer log I kept while making my latest game/school project.</p>
+            <a href="blog.html" id="devLogButton"><button class="btn btn-info border-light" style="height:40px;" type="button"><p style="color:white;">Click me!</p></a>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+        <script type="text/javascript">
 
-				<!-- Elements -->
-				<!--
-					<section>
-						<header>
-							<h2>Elements</h2>
-						</header>
-						<div class="content">
-
-							<section>
-								<header>
-									<h3>Text</h3>
-								</header>
-								<div class="content">
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<hr />
-									<h5>Blockquote</h5>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h5>Preformatted</h5>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
-
-print 'Sorted in ' + i + ' iterations.';</code></pre>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Lists</h3>
-								</header>
-								<div class="content">
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Table</h3>
-								</header>
-								<div class="content">
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Buttons</h3>
-								</header>
-								<div class="content">
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button large">Large</a></li>
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Form</h3>
-								</header>
-								<div class="content">
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</div>
-							</section>
-
-						</div>
-					</section>
-				-->
-
-				
-
-				<!-- Copyright -->
-					<div class="copyright">&copy; YAY. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+        </script>
+        
+        
+    </body>
+    
 </html>
