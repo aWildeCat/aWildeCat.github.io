@@ -1,2 +1,2 @@
 # awildecat.github.io
-my developer blog :D
+my portfolio!
